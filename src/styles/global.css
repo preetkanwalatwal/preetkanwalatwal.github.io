@@ -91,3 +91,57 @@ nav a:hover{
     padding:0.9rem 1.6rem;
     border-radius:8px;
 }
+
+.projects-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:2rem;
+
+margin-top:3rem;
+
+}
+
+.card{
+
+background:#1a1a1a;
+
+border-radius:12px;
+
+overflow:hidden;
+
+}
+
+.card img{
+
+width:100%;
+
+display:block;
+
+}
+
+.card h3{
+
+padding:1rem;
+
+}
+
+.card p{
+
+padding:0 1rem 1rem;
+
+color:#bbb;
+
+}
+
+.card a{
+
+display:block;
+
+padding:1rem;
+
+background:#202020;
+
+}
