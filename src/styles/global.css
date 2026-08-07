@@ -59,3 +59,35 @@ nav a:hover{
     color: #888;
     border-top: 1px solid #2c2c2c;
 }
+
+.hero{
+    padding:8rem 0;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:0.5rem;
+}
+
+.hero h2{
+    color:#6da9ff;
+    margin-bottom:1rem;
+}
+
+.hero p{
+    max-width:650px;
+    color:#c9c9c9;
+}
+
+.buttons{
+    margin-top:2rem;
+    display:flex;
+    gap:1rem;
+}
+
+.buttons a{
+    background:#6da9ff;
+    color:white;
+    padding:0.9rem 1.6rem;
+    border-radius:8px;
+}
