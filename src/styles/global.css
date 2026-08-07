@@ -21,3 +21,33 @@ a {
 img {
     max-width: 100%;
 }
+
+.container {
+    width:min(1100px, 90%);
+    margin:auto;
+}
+
+.navbar{
+    background:#161616;
+    padding:1rem 0;
+}
+
+.navbar .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+nav{
+    display: flex;
+    gap: 2rem;
+}
+
+nav a:hover{
+    color: #6da9ff;
+}
