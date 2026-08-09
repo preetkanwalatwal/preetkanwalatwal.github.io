@@ -1,17 +1,48 @@
 ---
-
+import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/Hero.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Skills from "../components/Skills.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Your Name | Game Developer">
+<Hero />
+  <main>
+
+    <h1>
+      Your Name
+    </h1>
+
+    <h2>
+      Junior Game Developer
+    </h2>
+
+    <p>
+      Gameplay programmer specialising in Unity, C#, and interactive systems.
+    </p>
+	<section class="container">
+
+	<h2>Featured Projects</h2>
+
+	<div class="projects-grid">
+
+	<ProjectCard
+	title="Dungeon Crawler"
+	description="Unity dungeon crawler featuring AI, inventory and combat."
+	image="/images/projects/dungeon.webp"
+	link="/projects/dungeon"
+	/>
+
+	<ProjectCard
+	title="Tower Defence"
+	description="Wave-based strategy game built in Unity."
+	image="/images/projects/tower.webp"
+	link="/projects/tower"
+	/>
+
+	</div>
+
+	</section>
+  </main>
+
+</MainLayout>
