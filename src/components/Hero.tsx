@@ -33,7 +33,7 @@ export default function Hero() {
     28,
     2200,
   )
-  const line4 = useTyping("renderers, physics, netcode, tooling.", 28, 4600)
+  const line4 = useTyping("gameplay systems, AI, Unity, C#.", 28, 4600)
 
   const corner: CSSProperties = {
     position: "absolute",

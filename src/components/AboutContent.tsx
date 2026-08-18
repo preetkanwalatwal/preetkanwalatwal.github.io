@@ -90,7 +90,7 @@ export default function AboutContent() {
           }}
         >
           <img
-            src="me.jpg"
+            src="/images/me.jpg"
             alt="Me"
             style={{
               width: '100%',
