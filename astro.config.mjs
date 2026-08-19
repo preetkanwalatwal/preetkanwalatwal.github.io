@@ -4,11 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'node:url'
 
 export default defineConfig({
-  site: 'https://preetkanwalatwal.github.io/',
-  base: '/projects',
-
   integrations: [react()],
-
   vite: {
     plugins: [tailwindcss()],
     resolve: {
