@@ -26,7 +26,7 @@ export default function EndlessHours() {
             preload="metadata"
           >
             <source
-              src="../video/endlesshoursgameplay.mp4"
+              src="../videos/endlesshoursgameplay.mp4"
               type="video/mp4"
             /> 
               Your Browser does not support the video tag
