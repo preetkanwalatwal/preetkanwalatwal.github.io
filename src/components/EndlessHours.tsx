@@ -17,11 +17,22 @@ export default function EndlessHours() {
           </p>
         </div>
 
-        <div className="project-image">
-          <img
-            src="../endlesshoursmain.png"
-            alt="Endless Hours Main"
-          />
+        <div className="project-video">
+          <video
+            controls
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          >
+            <source
+              src="../videos/endlesshoursgameplay.mp4"
+              type="video/mp4"
+            /> 
+              Your Browser does not support the video tag
+            
+           
+          </video>
         </div>
 
       </section>
@@ -67,7 +78,10 @@ export default function EndlessHours() {
       {/* Contributions */}
       <section className="project-contributions">
 
-        <h2>// My Contributions</h2>
+        <h2 
+          className="contribution-title" 
+          style={{fontSize: '1.2rem',}}
+        > // My Contributions</h2>
 
         <p className="contributions-intro">
           During the 96-hour game jam, I was responsible for
@@ -82,14 +96,14 @@ export default function EndlessHours() {
             <div className="contribution-video">
               <video controls>
                 <source
-                  src="../videos/endless-hours-ai.mp4"
+                  src="../videos/endlesshours1.mp4"
                   type="video/mp4"
                 />
               </video>
             </div>
 
             <div className="contribution-content">
-              <h3>Dynamic Clock Platform</h3>
+              <h3 className="contribution-title">Dynamic Clock Platform</h3>
 
               <p>
                 Implemented the clock as a functional platform where:
@@ -99,9 +113,9 @@ export default function EndlessHours() {
                 <li>Hands define a dynamic gameplay zone</li>
                 <li>Changing zones directly affect where gameplay takes place</li>
               </ul>
-
+              <br />
               <span className="contribution-tech">
-                C# · Unity · AI
+                Rotation System
               </span>
             </div>
 
@@ -114,23 +128,27 @@ export default function EndlessHours() {
             <div className="contribution-video">
               <video controls>
                 <source
-                  src="../videos/endless-hours-zones.mp4"
+                  src="../videos/endlesshours2.mp4"
                   type="video/mp4"
                 />
               </video>
             </div>
 
             <div className="contribution-content">
-              <h3>Dynamic Zones</h3>
+              <h3 className="contribution-title">Dynamic Zones</h3>
 
               <p>
-                Developed the system responsible for dynamically
-                selecting gameplay zones during the card selection
-                phase.
+                Developed a two-zone system to manage zones where:
               </p>
 
+              <ul className="list-disc pl-5">
+                <li>All entities are tracked on zone they occupy</li>
+                <li>Choice-based effects change entity behaviour based on player's location</li>
+                <li>Zone rotation based on player's card choices, with a randomly selected starting zone</li>
+              </ul>
+
               <span className="contribution-tech">
-                C# · Unity · Gameplay Systems
+                Raycasting · Ground Tracking
               </span>
             </div>
 
@@ -143,28 +161,59 @@ export default function EndlessHours() {
             <div className="contribution-video">
               <video controls>
                 <source
-                  src="../videos/endless-hours-player.mp4"
+                  src="../videos/endlesshours3.mp4"
                   type="video/mp4"
                 />
               </video>
             </div>
 
             <div className="contribution-content">
-              <h3>Player Gameplay</h3>
+              <h3 className="contribution-title">Card Selection System</h3>
 
               <p>
-                Implemented the player gameplay systems used to
-                control movement, combat and interaction with
-                the game's survival mechanics.
+                Implemented a card selection system where:
               </p>
 
+              <ul className="list-disc pl-5">
+                <li>Game is paused when two clock hands meet</li>
+                <li>Player selects a card from the UI panel</li>
+                <li>The selected card determines the zone rotation, and the game resumes</li>
+              </ul>
+
               <span className="contribution-tech">
-                C# · Unity · Gameplay Programming
+                UI Systems · Game State Management · Input Handling
               </span>
             </div>
 
           </article>
 
+          {/* Contribution 4 */}
+          <article className="contribution-card">
+            <div className="contribution-video">
+              <video controls>
+                <source 
+                  src="../videos/endlesshours4.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+
+            <div className="contribution-content">
+              <h3 className="contribution-title">Game Start & End Screen Implementation</h3>
+              <p>
+                Implemented the game start and end screen systems where:
+              </p>
+              <ul className="list-disc pl-5">
+                <li>Game begins from the start screen after player input</li>
+                <li>End screen is triggered when the game reaches its ending condition</li>
+                <li>UI buttons allows player to restart the game</li>
+              </ul>
+
+              <span className="contribution-tech">
+                  UI Systems · Game State Management
+              </span>
+            </div>
+          </article>
         </div>
 
       </section>

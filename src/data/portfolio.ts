@@ -21,7 +21,7 @@ export const PROJECTS = [
     lines: 'TBC',
     lang: 'C#',
     color: '#7c3aed',
-    img: '/images/endlesshoursmain.png',
+    img: '../images/endlesshoursmain.png',
   },
   {
     id: 'galacticleap',
