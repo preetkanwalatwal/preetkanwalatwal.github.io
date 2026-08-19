@@ -26,7 +26,7 @@ export default function EndlessHours() {
             preload="metadata"
           >
             <source
-              src="../videos/endlesshoursgameplay.mp4"
+              src={`${import.meta.env.BASE_URL}video/endlesshoursgameplay.mp4`}
               type="video/mp4"
             /> 
               Your Browser does not support the video tag
@@ -128,7 +128,7 @@ export default function EndlessHours() {
             <div className="contribution-video">
               <video controls>
                 <source
-                  src="portfolio-wesbite/videos/endlesshours2.mp4"
+                  src="../videos/endlesshours2.mp4"
                   type="video/mp4"
                 />
               </video>
