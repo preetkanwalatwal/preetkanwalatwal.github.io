@@ -322,7 +322,7 @@ export default function AboutContent() {
                     color: '#00e5c0',
                   }}
                 >
-                  https://github.com/preetatwal04
+                <a href="https://github.com/preetkanwalatwal">https://github.com/preetkanwalatwal</a>  
                 </span>
               </div>
 
@@ -354,7 +354,7 @@ export default function AboutContent() {
                     color: '#00e5c0',
                   }}
                 >
-                  https://www.linkedin.com/in/preetkanwal-atwal-b301172b9/
+                  <a href="https://www.linkedin.com/in/preetkanwal-atwal-b301172b9/">https://www.linkedin.com/in/preetkanwal-atwal-b301172b9/</a>
                 </span>
               </div>
 
