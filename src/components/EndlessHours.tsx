@@ -128,7 +128,7 @@ export default function EndlessHours() {
             <div className="contribution-video">
               <video controls>
                 <source
-                  src="../videos/endlesshours2.mp4"
+                  src="portfolio-wesbite/videos/endlesshours2.mp4"
                   type="video/mp4"
                 />
               </video>
