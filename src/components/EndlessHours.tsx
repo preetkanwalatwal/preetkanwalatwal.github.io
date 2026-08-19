@@ -26,7 +26,7 @@ export default function EndlessHours() {
             preload="metadata"
           >
             <source
-              src={`${import.meta.env.BASE_URL}video/endlesshoursgameplay.mp4`}
+              src="../video/endlesshoursgameplay.mp4"
               type="video/mp4"
             /> 
               Your Browser does not support the video tag
