@@ -1,0 +1,10 @@
+{
+  "description": "Showcase your game programming skills with a professional portfolio featuring an about me section and detailed project displays for potential employers.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
