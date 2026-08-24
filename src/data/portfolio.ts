@@ -9,7 +9,7 @@ export const PROJECTS = [
     lines: 'TBC',
     lang: ['C# ', '& Python'],
     color: '#00e5c0',
-    img: 'https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=700&h=420&fit=crop&auto=format',
+    img: '../images/dynamicdifficultyscreenshot.png',
   },
   {
     id: 'endless-hours',
@@ -42,9 +42,9 @@ export const PROJECTS = [
     tags: ['Unity', 'C#', '2D', 'Gameplay programming', 'Enemy AI', 'UI'],
     desc: '',
     lines: '19,300',
-    lang: 'Rust',
+    lang: 'C#',
     color: '#e55a00',
-    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&h=420&fit=crop&auto=format',
+    img: '../images/2dtwinstickshooter.png',
   } 
 ]
 
