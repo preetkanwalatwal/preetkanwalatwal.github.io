@@ -126,11 +126,9 @@ export default function DynamicDifficulty(){
                     className="architecture-image"
                 />
 
-                <div className="technology-list">
-                    <span>
-                        Unity Client
-                    </span>
-                    <strong>The game client tracks player performance: </strong>
+                <div className="overview-content">
+                    
+                    <strong>The Unity client tracks player performance and sends gameplay statistics to a Flask API. After feature processing, a Random Forest model predicts an appropriate difficulty level. The prediction is returned to Unity, where the DifficultyManager dynamically adjusts enemy behaviour and gameplay parameters. </strong>
 
                     
 
