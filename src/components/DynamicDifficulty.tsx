@@ -82,6 +82,14 @@ const stages: PipelineStage[] = [
   },
 ];
 
+const pipelineStages = [
+  "ML Prediction",
+  "DifficultyManager",
+  "Difficulty Level",
+  "Gameplay Parameters",
+  "Updated Enemy / Player Behaviour",
+];
+
 export default function DynamicDifficulty(){
 
     const [zoomed, setZoomed] = useState(false);
@@ -534,18 +542,12 @@ public class DDAApiClient : Monobehaviour
                                 <span className="stage-item">
                                     Boosts
                                 </span>
-
                             </div>
-
 
                             <div className="stage-technology">
-
                                 PlayerStatsTracker • Unity Cloud Save
-
                             </div>
-
                         </div>
-
                     </div>
 
 
@@ -553,17 +555,12 @@ public class DDAApiClient : Monobehaviour
 
 
                     {/* API Integration */}
-
                     <div className="pipeline-stage">
-
                         <div className="stage-number">
                             02
                         </div>
-
                         <div className="stage-content">
-
                             <h3>ML API Integration</h3>
-
                             <p className="stage-description">
 
                                 The DDAApiClient sends player statistics to the
@@ -572,7 +569,6 @@ public class DDAApiClient : Monobehaviour
                                 passed to the game.
 
                             </p>
-
                             
                             <h4 className="h4"> Request/Response Flow</h4>
 
@@ -636,26 +632,17 @@ public class DDAApiClient : Monobehaviour
                                 <span className="stage-item">
                                     Error Handling
                                 </span>
-
                             </div>
-
 
                             <div className="stage-technology">
-
                                 DDAApiClient • Flask REST API
-
                             </div>
-
                         </div>
-
                     </div>
-
 
                     <div className="pipeline-arrow">↓</div>
 
-
                     {/* Difficulty Manager */}
-
                     <div className="pipeline-stage">
 
                         <div className="stage-number">
@@ -667,51 +654,151 @@ public class DDAApiClient : Monobehaviour
                             <h3>Applying Dynamic Difficulty</h3>
 
                             <p className="stage-description">
-
                                 The DifficultyManager converts the machine learning
-                                prediction into gameplay parameters that dynamically
-                                adjust the player's experience.
-
+                                prediction into gameplay parameters, dynamically
+                                scaling the experience based on player performance.
                             </p>
 
 
-                            <div className="stage-items">
+                            {/* Difficulty Mapping */}
 
-                                <span className="stage-item">
-                                    Enemy Accuracy
-                                </span>
+                            <div className="images-row">
 
-                                <span className="stage-item">
-                                    Enemy Health
-                                </span>
+                                <div className="image-column">
 
-                                <span className="stage-item">
-                                    Enemy Damage
-                                </span>
+                                    <h4>Difficulty Mapping</h4>
 
-                                <span className="stage-item">
-                                    Enemy Count
-                                </span>
+                                    <img
+                                        src="../images/difficultymapping.png"
+                                        alt="Difficulty Mapping"
+                                        className="architecture-image4"
+                                    />
 
-                                <span className="stage-item">
-                                    Aim Assist
-                                </span>
+                                </div>
 
-                                <span className="stage-item">
-                                    Respawn Time
-                                </span>
+
+                                <div className="image-column">
+
+                                    <h4>Example Difficulty Adjustment</h4>
+
+                                    <img
+                                        src="../images/difficultymappingexample.png"
+                                        alt="Example of Difficulty Mapping"
+                                        className="architecture-image3"
+                                    />
+
+                                </div>
 
                             </div>
+                            
+                            <div style={{ paddingBottom: 20}}>
+                                <h4>Implementation Flow:</h4>          
+                                <div className="pipeline2">
+                                    {pipelineStages.map((stage, index) => (
+                                        <div className="pipeline-item2" key={stage}>
+                                        <div className="pipeline-stage2">
+                                            {stage}
+                                        </div>
 
+                                        {index < pipelineStages.length - 1 && (
+                                            <span className="pipeline-arrow2">→</span>
+                                        )}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            
+                            <CodeSnippets 
+                                code={`
+
+[System.Serializable]
+public class DifficultyManager : MonoBehaviour
+{
+    private void HandleDifficultyAdjustment(DDAResponse response)
+    {
+        if (response == null || response.difficultyAdjustments == null)
+        return;
+
+        currentSkillLevel = response.skillLevel;
+        currentDifficulty = response.difficultyAdjustments;
+        lastPredictedScore = response.predictedWinPlacePerc;
+
+        OnDifficultyChanged?.Invoke(currentDifficulty);
+        ApplyDifficultyToGameSystems();
+    }
+
+    public void RequestDifficultyUpdate()
+    {
+        if (PlayerStatsTracker.Instance == null || apiClient == null)
+            return;
+
+        PlayerStats stats = PlayerStatsTracker.Instance.GetCurrentStats();
+        apiClient.RequestDifficultyAdjustment(stats);
+    }
+
+    private void ApplyDifficultyToGameSystems()
+    {
+        EnemyAI[] enemies = FindObjectsByType<EnemyAI>(FindObjectsSortMode.None);
+
+        foreach (var enemy in enemies)
+            enemy.UpdateDifficulty(currentDifficulty);
+
+        EnemySpawner spawner = FindAnyObjectByType<EnemySpawner>();
+        if (spawner != null)
+            spawner.UpdateDifficulty(currentDifficulty);
+
+        PlayerHealth playerHealth = FindAnyObjectByType<PlayerHealth>();
+        if (playerHealth != null)
+            playerHealth.SetDamageMultiplier(
+                currentDifficulty.playerDamageMultiplier
+            );
+
+        PlayerShooting playerShooting = FindAnyObjectByType<PlayerShooting>();
+        if (playerShooting != null)
+            playerShooting.SetAimAssist(currentDifficulty.aimAssist);
+    }
+
+    switch (mode)
+    {
+        case GameManager.Difficulty.Easy:
+            SetManualDifficulty(1f);
+            break;
+
+        case GameManager.Difficulty.Medium:
+            SetManualDifficulty(2f);
+             break;
+
+        case GameManager.Difficulty.Hard:
+            SetManualDifficulty(3f);
+            break;
+
+        case GameManager.Difficulty.AI:
+            EnableAPI();
+            break;
+    }
+}
+
+                                    `.trim()}
+                                language="C#"
+                                filename="DifficultyManager"
+                                description="This script applies difficulty adjustments based on ML prediction."
+                            />
+
+                            
+                            {/* Gameplay Parameters */}
+                            <div className="stage-items">
+                                <span className="stage-item">Enemy Accuracy</span>
+                                <span className="stage-item">Enemy Health</span>
+                                <span className="stage-item">Enemy Damage</span>
+                                <span className="stage-item">Enemy Count</span>
+                                <span className="stage-item">Aim Assist</span>
+                                <span className="stage-item">Respawn Time</span>
+                            </div>
 
                             <div className="stage-technology">
-
                                 DifficultyManager • Gameplay Systems
-
                             </div>
-
-                        </div>
-
+                        </div> 
                     </div>
 
 
@@ -719,15 +806,12 @@ public class DDAApiClient : Monobehaviour
 
 
                     {/* Gameplay Outcome */}
-
                     <div className="pipeline-stage">
-
                         <div className="stage-number">
                             04
                         </div>
 
                         <div className="stage-content">
-
                             <h3>Dynamic Gameplay</h3>
 
                             <p className="stage-description">
@@ -738,11 +822,8 @@ public class DDAApiClient : Monobehaviour
 
                             </p>
 
-
                             <div className="details-grid">
-
                                 <div>
-
                                     <span>
                                         Lower Difficulty
                                     </span>
@@ -751,12 +832,9 @@ public class DDAApiClient : Monobehaviour
                                         Fewer enemies, lower accuracy and increased
                                         player assistance.
                                     </strong>
-
                                 </div>
 
-
                                 <div>
-
                                     <span>
                                         Higher Difficulty
                                     </span>
@@ -765,82 +843,33 @@ public class DDAApiClient : Monobehaviour
                                         Stronger enemies, increased accuracy and
                                         greater combat challenge.
                                     </strong>
-
                                 </div>
-
                             </div>
-
-
                         </div>
-
                     </div>
-
-
                 </div>
 
 
                 {/* Summary */}
-
                 <div className="pipeline-summary">
-
                     <div className="summary-flow">
-
                         <span>Player Gameplay</span>
-
                         →
-
                         <span>Statistics Tracking</span>
-
                         →
-
                         <span>ML Prediction</span>
-
                         →
-
                         <span>Difficulty Manager</span>
-
                         →
-
                         <span>Adaptive Gameplay</span>
-
                     </div>
-
                 </div>
 
-
             </section>        
-
-            <section className="project-details">
-                <h2>Client-Server Integration</h2>
-            </section>
-
-            <section className="project-details">
-                <h2>Dynamic Difficulty System</h2>
-            </section>
-
-            <section className="project-details">
-                <h2>Gameplay Demo</h2>
-            </section>
-
-            <section className="project-details">
-                <h2>Technical Breakdown</h2>
-            </section>
-
-            <section className="project-details">
-                <h2>Testing & Results</h2>
-            </section>
-
-            <section className="project-details">
-                <h2>Challenges & Solution</h2>
-            </section>
-
-            <section className="project-details">
-                <h2>What I learned</h2>
-            </section>
-
-            <section className="project-details">
-                <h2>Final Links</h2>
-            </section>
+            {/* Dynamic Difficulty System */}
+            {/* client-server integration */}
+            {/* testing & results */}
+        
         </div>
     )
 }
