@@ -228,7 +228,7 @@ export default function DynamicDifficulty(){
                 </div>
                 
                 <img 
-                    src="../images/dda_architecture.png" 
+                    src="/images/dda_architecture.png" 
                     alt="System Architecture"
                     className="architecture-image"
                 />
@@ -337,7 +337,7 @@ export default function DynamicDifficulty(){
 
                 <div className="overview-content">
                     <img
-                        src="../images/unityclientarchitecture.png"
+                        src="/images/unityclientarchitecture.png"
                         alt="Unity Client Architecture"
                         className="architecture-image2"
                         onClick={() => {
@@ -573,7 +573,7 @@ public class DDAApiClient : Monobehaviour
                             <h4 className="h4"> Request/Response Flow</h4>
 
                             <img 
-                                src="../images/backenddesign.png"
+                                src="/images/backenddesign.png"
                                 alt="Backend Design"
                                 className="architecture-image3"
                             />
@@ -669,7 +669,7 @@ public class DDAApiClient : Monobehaviour
                                     <h4>Difficulty Mapping</h4>
 
                                     <img
-                                        src="../images/difficultymapping.png"
+                                        src="/images/difficultymapping.png"
                                         alt="Difficulty Mapping"
                                         className="architecture-image4"
                                     />
@@ -682,7 +682,7 @@ public class DDAApiClient : Monobehaviour
                                     <h4>Example Difficulty Adjustment</h4>
 
                                     <img
-                                        src="../images/difficultymappingexample.png"
+                                        src="/images/difficultymappingexample.png"
                                         alt="Example of Difficulty Mapping"
                                         className="architecture-image3"
                                     />
