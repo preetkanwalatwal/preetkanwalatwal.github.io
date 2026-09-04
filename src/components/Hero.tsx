@@ -272,7 +272,7 @@ export default function Hero() {
                 }}
               />
               <a
-                href="/resume.pdf"
+                href="/PreetAtwalCV.pdf"
                 style={{
                   display: "flex",
                   alignItems: "center",
