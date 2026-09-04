@@ -9,31 +9,35 @@ export default function GalacticLeap(){
                         className="project-section"
                         style={{ marginBottom: 16 }}
                     >
-                        // Galactic-Leap
+                        // 2D Twin Stick Shooter - Lost Ruines in Sanguine
                     </h1>
 
                     <p>
-                        Galactic-hero desc. here.
+                        Project desc here.
                     </p>
 
                     <div className="project-links">
-                        <a
-                            
+                    <a
+                        href="https://preetkanwalatwal.itch.io/lost-ruins-of-sanguine"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link play-link"
                         >
-                            ▶ Play Here
+                        ▶ Play Here
                         </a>
 
                         <a
-                        
+                        href="https://github.com/preetkanwalatwal/2DTopdownGame"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
                         >
-                            ◇ GitHub Repository
+                        ◇ GitHub Repository
                         </a>
-
                     </div>
 
                 </div>
             </section>
-            
         </div>
     )
 }

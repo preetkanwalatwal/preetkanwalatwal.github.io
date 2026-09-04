@@ -37,6 +37,7 @@ export const PROJECTS = [
   },
   {
     id: 'twin-stick-shooter',
+    slug: 'twinstickshooter',
     title: '2D Twin Stick Shooter',
     year: '2025',
     tags: ['Unity', 'C#', '2D', 'Gameplay programming', 'Enemy AI', 'UI'],
