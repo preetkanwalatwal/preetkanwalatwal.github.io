@@ -13,7 +13,7 @@ export default function GalacticLeap(){
                     </h1>
 
                     <p>
-                        Project desc here.
+                                           
                     </p>
 
                     <div className="project-links">

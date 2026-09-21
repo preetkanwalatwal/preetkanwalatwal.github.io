@@ -162,15 +162,7 @@ export default function AboutContent() {
                       {s.name}
                     </span>
 
-                    <span
-                      style={{
-                        fontFamily: 'JetBrains Mono, monospace',
-                        fontSize: '0.7rem',
-                        color: '#6b7380',
-                      }}
-                    >
-                      {s.level}%
-                    </span>
+                    
                   </div>
 
                   <div className="skill-bar-track">

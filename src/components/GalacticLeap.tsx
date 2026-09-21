@@ -13,7 +13,7 @@ export default function GalacticLeap(){
                     </h1>
 
                     <p>
-                        Galactic-hero desc. here.
+                        Page under construction. Check out the Play here button and GitHub repository for more information.
                     </p>
 
                     <div className="project-links">
