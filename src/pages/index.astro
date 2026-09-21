@@ -1,48 +1,8 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import Hero from "../components/Hero.astro";
-import ProjectCard from "../components/ProjectCard.astro";
-import Skills from "../components/Skills.astro";
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/Hero'
 ---
 
-<MainLayout title="Your Name | Game Developer">
-<Hero />
-  <main>
-
-    <h1>
-      Your Name
-    </h1>
-
-    <h2>
-      Junior Game Developer
-    </h2>
-
-    <p>
-      Gameplay programmer specialising in Unity, C#, and interactive systems.
-    </p>
-	<section class="container">
-
-	<h2>Featured Projects</h2>
-
-	<div class="projects-grid">
-
-	<ProjectCard
-	title="Dungeon Crawler"
-	description="Unity dungeon crawler featuring AI, inventory and combat."
-	image="/images/projects/dungeon.webp"
-	link="/projects/dungeon"
-	/>
-
-	<ProjectCard
-	title="Tower Defence"
-	description="Wave-based strategy game built in Unity."
-	image="/images/projects/tower.webp"
-	link="/projects/tower"
-	/>
-
-	</div>
-
-	</section>
-  </main>
-
-</MainLayout>
+<Layout title="Preet Atwal — Game Programmer">
+  <Hero client:load />
+</Layout>

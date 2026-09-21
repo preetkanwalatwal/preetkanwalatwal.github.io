@@ -1,0 +1,34 @@
+---
+interface Props {
+  pathname: string
+}
+
+const { pathname } = Astro.props
+
+const links = [
+  { href: '/', label: '// home' },
+  { href: '/about', label: '// about' },
+  { href: '/projects', label: '// projects' },
+]
+---
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid #1a1d2e;background:rgba(7,7,13,0.88);backdrop-filter:blur(12px);">
+  <div style="max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:56px;">
+    <a href="/" style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:0.9rem;color:#00e5c0;letter-spacing:0.04em;text-decoration:none;">
+      {'<PA />'}
+    </a>
+    <nav style="display:flex;gap:32px;">
+      {links.map(({ href, label }) => {
+        const isActive = pathname === href || (href !== '/' && pathname.startsWith(href))
+        return (
+          <a
+            href={href}
+            class={`nav-link${isActive ? ' active' : ''}`}
+          >
+            {label}
+          </a>
+        )
+      })}
+    </nav>
+  </div>
+</header>

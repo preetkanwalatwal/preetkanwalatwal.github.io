@@ -1,0 +1,25 @@
+---
+import '../styles/global.css'
+import Nav from '../components/Nav.astro'
+
+interface Props {
+  title?: string
+}
+
+const { title = 'Preet Atwal — Game Programmer' } = Astro.props
+const pathname = Astro.url.pathname
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Preet Atwal — Game Programmer portfolio" />
+    <title>{title}</title>
+  </head>
+  <body style="background:#07070d; min-height:100vh;">
+    <Nav pathname={pathname} />
+    <slot />
+  </body>
+</html>
